@@ -33,5 +33,74 @@ Although the difference is defined for $B \not \subset A$, we will only consider
 \end{proof}
 An important remark to denote here, is the fact that the hypothesis of $ B \contained A $ is an important restriction.
 
-The use of the Subtraction Principle is advisable in situations when it is easier to enumerate the elements of $B$ (``bad guys'') than the elements of $ A - B $ (`` good guys '' )
+The use of the Subtraction Principle is advisable in situations when it is easier to enumerate the elements of $B$ (``bad guys'') than the elements of $ A - B $ (`` good guys '' ). As a general rule of thumb, it is easy to compute $\abs{A}$ and $\abs{B}$ rather than compute $ \abs{A - B} $ directly.
 
+\textbf{When We Multiply}
+
+\textbf{The Product Principle}
+
+\begin{thm}
+	\textbf{Product Principle} Let $X$ and $Y$ be two finite sets. Then the number of pairs $(x,y)$ satisfying $x \in X $ and $y \in Y$ is $\abs{X} \times \abs{Y}$
+\end{thm}
+\begin{proof}
+	There are $\abs{X} $ choices for the first element $x$ of the pair $(x,y)$, then regardless of what we choose for $x$, there are $\abs{Y}$ choices for $y$. Each choice of $x$ can be paired with each choice of $y$, so the statement is proved.
+\end{proof}
+
+A generalized version is the following:
+
+\begin{thm}
+	\textbf{Generalized Product Principle} Let $X_1,x_2, \ldots X_k$ be inite sets. Then, the number of k-tuples $(x_1,\ldots,x_k) $ satisfying $x_i \in X_i$ is $ \abs{X_1} \times \ldots \times \abs{X_k} $.
+\end{thm}
+
+\begin{proof}
+	We prove the statement by induction on $k$. For $k = 1$, there is nothing to prove, and for $ k = 2$, the statement reduces to the Product Principle. Now let us assume that we know the statement for $ k-1$, and let us prove it for $k$. A k-tuple $ (x_1, \ldots, x_k) $ satisfying $x_i \in X_i$ can be decomposed into an ordered pair $ ((x_1, \ldots, x_{k-1}), x_k) $, where we still have $x_i \in X_i$. The number of such k-1-tuples ia by our induction hypothesis, $ \abs{X_1} \times \ldots \times \abs{X_{k-1}} $. The number of elements $x_k \in X_k$ is $ \abs{X_k} $. Therefore, by the Product Principle, the number of ordered pairs $ ((x_1, \ldots, x_{k-1}), x_k) $ satisfying the conditions is;
+	\[ (\abs{X_1} \times \ldots \abs{X_{k-1}}) \times \abs{X_k} \]
+	so this is also the number of k-tuples $ (x_1, \ldots x_k) $ satisfying $ x_i \in X_i $
+\end{proof}
+
+An special case of the Theorem above, is when all $ \abs{X_i} $ have the same size. If $A$ is a finite alphabet consisting of $n$ letters, then a k-letter string over $A$ is a sequence of k letters,each of which is an element of $A$.
+
+\begin{cor}
+	The number of k-letters strings over an n-element alphabet $A$ is $n^k$
+\end{cor}
+\begin{proof}
+	Apply the above theorem.
+\end{proof}
+
+\textbf{Using Several Counting Principles}
+
+\textbf{When Repetitions Are Not Allowed}
+
+\textbf{Permutations}
+
+\begin{define}
+	Let $n$ be a positive integer. Then the number:
+	\[ n \cdot (n-1) \ldots 2 \cdot 1 \]
+	is called n-factorial, and is denoted by $n!$
+\end{define}
+We define $0! = 1$.
+The set $ \set{1,2, \ldots, n} $ will be denoted with: $ [n] $ 
+\begin{thm}
+	For any positive integers $n$, the number of ways to arange all elements of the set $ [n] $ in a line is $n!$
+\end{thm}
+\begin{proof}
+	There are $n$ ways to select the element that will be at the first place in our line. Then, regardless of this selection, there are $n-1$ ways to select the element that will be listed second, and so on \ldots.
+\end{proof}
+an important definition is on place:
+
+\begin{define}
+	A permutation of a finite set $S$ is a list of the elements of $S$ containing each element of $S$ exactly once.
+\end{define}
+
+\textbf{Partial Lists Without Repetition}
+
+\begin{thm}
+	Let $n$ and $k$ be positive integers so that $ n \geq k$. Then, the number of ways to make a k-element list from $[n]$ without repeating any elements is:
+	\[ n(n-1)(n-2) \ldots (n-k+1) \]
+\end{thm}
+\begin{proof}
+	There are $n$ choices for the first element of the list, then $n-1$ choices for the second element of the list, and so on; finally there are $n-k+1$ choices for the las (kth) element of the list. The result then follows by the Product Principle.
+\end{proof}
+As a notation abbreviation, we define as:
+\[ (n)_k = n(n-1)(n-2)\ldots(n-k+1) \]
+ 
