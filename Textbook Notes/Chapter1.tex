@@ -103,4 +103,34 @@ an important definition is on place:
 \end{proof}
 As a notation abbreviation, we define as:
 \[ (n)_k = n(n-1)(n-2)\ldots(n-k+1) \]
+
+
+
+\textbf{When We Divide}
+
+\textbf{The Division Principle}
+
+\begin{define}
+	Let $S$ and $T$ be finite sets, and let $d$ be a fixed positive integer. We say that the function $ f:T \rightarrow S $ is $d-$to-one if fir each element $s \in S$ there exist exactly $d$ elements $ t \in T$ so that $f(t) = s$
+\end{define}
+
+\begin{thm}
+	\textbf{Division Principle} Let $S$ and $T$ be finite sets so that a $d-$to-one function $ f: T \rightarrow S $ exits. Then:
+	\[ \abs{S} = \frac{\abs{T}}{d} \]
+\end{thm}
+
+\textbf{Example}
+
+An important example: Let us ask $n$ people to sit around a circular table, and consider two seating arrangements identical if each person has the same \textit{left neighbor} in both seatings.
+
+An important result is that: The number of different seating arrangements for $n$ people around a circular table is $ (n-1)! $
+
+The solution is given as, If the table were linear, instead of circular, then the number of all seating arrangements would be $n!$. In other words, if $T$ is the set of seating arrangements of $n$ people along a linear table, then $ \abs{T} = n! $. Now let $s$ be the set of seating arrangements  around our circular table, we claim that each element of $S$ corresponds to $n$ elements of $T$. Indeed, take a circular seating $s \in S$, and choose a person $p$ in that seating, in one of $n$ ways. Then turn $s$ into a linear seating, by starting the seating with $p$, then continuing with the left neighbor of $p$, the left neighbor of that person, then the left neighbor of that person, and so on. This turns $s$ into a linear seating. As there are $n$ choices for $p$, each circular seating $s$ can be turned into $n$ different linear seating arrangements.
+On the other hand, each linear seating $ \operatorname{lins} $ corresponds to one circular seating $f(\operatorname{lins})$, because no matter where we ``fold'' lins into a circle, the left neighbor of each person will not change.
+This means that $ f:T \rightarrow S $ is an $n$-to-one function. Therefore, by the Division Principle, 
+\[ \abs{S} = \frac{\abs{t}}{N} = \frac{n!}{n} = (n-1)! \]
+So this is the number of circular seating arrangements.
+
+
+
  
